@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted } from 'vue'
 import { useUserStore } from '../../store/modules/user.ts';
 import router from '../../router';
 

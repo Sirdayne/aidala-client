@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia';
+import { User } from '../../models/user.interface.ts';
 
 export const useUserStore = defineStore('user', {
     state: () => ({
@@ -8,7 +9,7 @@ export const useUserStore = defineStore('user', {
         },
     }),
     actions: {
-        setUser(user) {
+        setUser(user: User) {
             this.currentUser = user;
         },
     },
