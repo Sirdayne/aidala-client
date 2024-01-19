@@ -5,7 +5,7 @@ import { getTodos } from './login.service.ts';
 
 const userStore = useUserStore();
 
-const todos = ref([]);
+const todos = ref<any>([]);
 
 onMounted(() => {
   setTimeout(() => {
