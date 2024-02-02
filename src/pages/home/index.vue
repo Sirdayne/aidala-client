@@ -44,7 +44,7 @@
             </p>
           </div>
           <div class="home-benefits-img">
-            <img src="../../assets/img/benefits-slide-1.png" alt="Benefits Img">
+            <img src="../../assets/img/benefits-slide-1.png" alt="Benefits Image">
           </div>
         </div>
       </div>
@@ -80,5 +80,76 @@
         </div>
       </div>
     </div>
+
+    <div class="home-features">
+      <div class="home-features-container">
+        <div class="home-features-title-container">
+          <h2 class="home-features-title">
+            Features for Mining companies
+          </h2>
+        </div>
+
+        <div class="home-features-block">
+          <div class="home-features-block-text">
+            <div>
+              <h3 class="home-features-block-text-title">
+                Trading Platforms Integration: AiDala Meets MetaTrader, Charles Schwab, Interactive Brokers
+              </h3>
+              <p class="home-features-block-text-content">
+                Explore a seamless fusion of AIDALA with established trading platforms, bringing charting,
+                technical analysis (TA) tools, live market data, and direct trading capabilities into one unified space.
+              </p>
+            </div>
+          </div>
+          <div class="home-features-block-img">
+            <img src="../../assets/img/home-features-1.png" alt="Features Image">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="home-join">
+      <div class="home-join-title-container">
+        <h2 class="home-join-title">
+          Join AiDala Today: Where Innovation Meets Your Trading Needs
+        </h2>
+      </div>
+      <div class="home-join-description-container">
+        <h2 class="home-join-description">
+          Embark on a journey where innovation meets your unique needs. Elevate your trading strategies, gain valuable insights, and experience a new standard in
+          rypto trading with AiDala's MVP. Empower Your Trading Journey with AIDALA - Redefining the Future of Crypto Trading.
+        </h2>
+      </div>
+      <div>
+        <div class="home-join-btns-container">
+          <div class="home-join-btns">
+            <button class="home-btn">Start</button>
+            <button class="home-btn home-btn__outline">Connect</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="home-book-demo-container">
+      <div class="home-book-demo">
+        <h3 class="home-book-demo-title">
+          Book your demo now
+        </h3>
+        <div class="home-book-demo-description">
+          Stay at the forefront of innovation with our commitment to continuous research and development.
+        </div>
+      </div>
+    </div>
+
+    <footer class="home-footer-container">
+      <div class="home-footer">
+        <div class="home-footer-link">
+          AiDala.uk
+        </div>
+        <div class="home-footer-linkedin">
+          <img src="../../assets/img/linkedin_square.svg" alt="Features Image">
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
