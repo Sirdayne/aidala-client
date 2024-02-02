@@ -132,11 +132,23 @@
 
     <div class="home-book-demo-container">
       <div class="home-book-demo">
-        <h3 class="home-book-demo-title">
-          Book your demo now
-        </h3>
-        <div class="home-book-demo-description">
-          Stay at the forefront of innovation with our commitment to continuous research and development.
+        <div class="home-book-demo-content">
+          <h3 class="home-book-demo-title">
+            Book your demo now
+          </h3>
+          <div class="home-book-demo-description">
+            Stay at the forefront of innovation with our commitment to continuous research and development.
+          </div>
+          <div class="home-book-demo-input home-input">
+            <input type="email" placeholder="Email">
+            <span class="home-input-arrow">
+              <img src="../../assets/img/input-arrow.svg" alt="Input Arrow">
+            </span>
+          </div>
+        </div>
+
+        <div class="home-book-demo-img">
+          <img src="../../assets/img/book-img.svg" alt="Book Your Demo Image">
         </div>
       </div>
     </div>
