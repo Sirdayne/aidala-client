@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Pagination, Navigation } from 'swiper/modules'
+import { Pagination, Navigation, Autoplay } from 'swiper/modules'
 
 // Import Swiper styles
 import 'swiper/css';
@@ -8,7 +8,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-const modules = [Pagination, Navigation]
+const modules = [Pagination, Navigation, Autoplay]
 </script>
 
 <template>
@@ -45,7 +45,16 @@ const modules = [Pagination, Navigation]
 
         <div class="home-benefits-main">
           <swiper
-              :pagination="{type: 'progressbar'}"
+              :autoplay="{
+                delay: 2500,
+                disableOnInteraction: false,
+              }"
+              :pagination="{
+                type: 'progressbar',
+                el: '.home-benefits-slider-progress',
+                horizontalClass: '.home-benefits-slider-progress',
+                progressbarFillClass: 'home-benefits-slider-progress-fill'
+              }"
               :navigation="{
                 enabled: true,
                 nextEl: '.home-benefits-slider-next',
@@ -110,6 +119,10 @@ const modules = [Pagination, Navigation]
             </div>
             <div class="home-benefits-slider-next home-benefits-slider-arrow">
               <img src="../../assets/img/swiper-next.svg" alt="Swiper Next">
+            </div>
+
+            <div class="home-benefits-slider-progress">
+              <div class="home-benefits-slider-progress-fill"></div>
             </div>
           </swiper>
         </div>

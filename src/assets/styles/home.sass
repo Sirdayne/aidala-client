@@ -161,6 +161,41 @@
       &-next
         right: 200px
 
+      &-progress
+        position: absolute
+        top: auto!important
+        bottom: 12px
+        left: calc(50% - 20px)!important
+        height: 6px!important
+        width: 40px!important
+        background: rgba(69, 67, 68, 1)!important
+        border-radius: 24px
+        &::after
+          position: absolute
+          content: ''
+          background: rgba(69, 67, 68, 1)
+          left: 48px
+          top: 0
+          width: 6px
+          height: 6px
+          border-radius: 50%
+        &::before
+          position: absolute
+          content: ''
+          background: rgba(69, 67, 68, 1)
+          left: 60px
+          top: 0
+          width: 6px
+          height: 6px
+          border-radius: 50%
+
+        &-fill
+          display: block
+          height: 6px
+          width: 100%
+          border-radius: 24px
+          background: linear-gradient(90deg, rgba(0, 90, 167, 1), rgba(255, 253, 228, 1))
+
     &-text
       margin-top: 104px
       max-width: 537px
