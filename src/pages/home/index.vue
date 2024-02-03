@@ -1,4 +1,14 @@
 <script setup lang="ts">
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Pagination, Navigation } from 'swiper/modules'
+
+// Import Swiper styles
+import 'swiper/css';
+
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+const modules = [Pagination, Navigation]
 </script>
 
 <template>
@@ -32,20 +42,76 @@
     <div class="home-benefits">
       <h2 class="home-benefits-title">Our key benefits</h2>
       <div class="home-benefits-slider-container">
-        <div class="home-benefits-slider">
-          <div class="home-benefits-slider-gradient"></div>
-          <div class="home-benefits-text">
-            <h3 class="home-benefits-text__title">
-              Personalized User Experience: Your Trading, Your Way
-            </h3>
-            <p class="home-benefits-text__description">
-              AiDala goes beyond generic analysis, providing personalized insights and recommendations tailored to your
-              preferences and trading style. Empower your decisions with information aligned precisely with your unique goals and risk tolerance.
-            </p>
-          </div>
-          <div class="home-benefits-img">
-            <img src="../../assets/img/benefits-slide-1.png" alt="Benefits Image">
-          </div>
+
+        <div class="home-benefits-main">
+          <swiper
+              :pagination="{type: 'progressbar'}"
+              :navigation="{
+                enabled: true,
+                nextEl: '.home-benefits-slider-next',
+                prevEl: '.home-benefits-slider-prev'
+              }"
+              :loop="true"
+              :modules="modules"
+              class="mySwiper"
+          >
+            <swiper-slide>
+              <div class="home-benefits-slider">
+                <div class="home-benefits-text">
+                  <h3 class="home-benefits-text__title">
+                    Personalized User Experience: Your Trading, Your Way
+                  </h3>
+                  <p class="home-benefits-text__description">
+                    AiDala goes beyond generic analysis, providing personalized insights and recommendations tailored to your
+                    preferences and trading style. Empower your decisions with information aligned precisely with your unique goals and risk tolerance.
+                  </p>
+                </div>
+                <div class="home-benefits-img">
+                  <img src="../../assets/img/benefits-slide-1.png" alt="Benefits Image">
+                </div>
+                <div class="home-benefits-slider-gradient"></div>
+              </div>
+            </swiper-slide>
+            <swiper-slide>
+              <div class="home-benefits-slider">
+                <div class="home-benefits-text">
+                  <h3 class="home-benefits-text__title">
+                    Unparalleled Data Security and Privacy: Your Trust, Our Priority
+                  </h3>
+                  <p class="home-benefits-text__description">
+                    Trust AIDALA for robust security measures and transparent data usage practices. We prioritize your data security and privacy without compromising on the convenience you deserve.
+                  </p>
+                </div>
+                <div class="home-benefits-img">
+                  <img src="../../assets/img/benefits-slide-2.png" alt="Benefits Image">
+                </div>
+                <div class="home-benefits-slider-gradient"></div>
+              </div>
+            </swiper-slide>
+            <swiper-slide>
+              <div class="home-benefits-slider">
+                <div class="home-benefits-text">
+                  <h3 class="home-benefits-text__title">
+                    Seamless Integration with Existing Tools: Unmatched Convenience
+                  </h3>
+                  <p class="home-benefits-text__description">
+                    Integrate AIDALA seamlessly with leading crypto trading platforms. Experience unmatched convenience and ease of use, eliminating the hassle of separate interfaces and manual data transfer.
+                  </p>
+                </div>
+                <div class="home-benefits-img">
+                  <img src="../../assets/img/benefits-slide-3.png" alt="Benefits Image">
+                </div>
+                <div class="home-benefits-slider-gradient"></div>
+              </div>
+            </swiper-slide>
+
+            <div class="home-benefits-slider-prev home-benefits-slider-arrow">
+              <img src="../../assets/img/swiper-prev.svg" alt="Swiper Prev">
+            </div>
+            <div class="home-benefits-slider-next home-benefits-slider-arrow">
+              <img src="../../assets/img/swiper-next.svg" alt="Swiper Next">
+            </div>
+          </swiper>
         </div>
       </div>
     </div>
