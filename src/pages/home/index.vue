@@ -19,6 +19,7 @@ const refLine = ref<HTMLElement | null>(null)
 const refCapabilities = ref<HTMLElement | null>(null)
 const refFeatures = ref<HTMLElement | null>(null)
 const refJoin = ref<HTMLElement | null>(null)
+const refSlides = ref<HTMLElement | null>(null)
 
 function scrollTo(view) {
   view.scrollIntoView({ behavior: 'smooth' })
@@ -31,7 +32,7 @@ function scrollToWithDelay(view) {
 }
 
 function scrollOnVerticalSwipe() {
-  refFeatures.scrollIntoView()
+  refSlides.value.scrollIntoView({behavior: 'smooth'})
 }
 </script>
 
@@ -194,7 +195,7 @@ function scrollOnVerticalSwipe() {
         </h2>
       </div>
 
-      <div class="home-features-container">
+      <div class="home-features-container" ref="refSlides">
         <swiper
           :direction="'vertical'"
           :height="847"
@@ -203,7 +204,7 @@ function scrollOnVerticalSwipe() {
           :spaceBetween="30"
           :mousewheel="true"
           :modules="featuresModules"
-          @sliderMove="scrollOnVerticalSwipe()"
+          @beforeTransitionStart="scrollOnVerticalSwipe()"
           @reachEnd="scrollToWithDelay(refJoin)"
           @reachBeginning="scrollToWithDelay(refLine)"
           class="mySwiper"
