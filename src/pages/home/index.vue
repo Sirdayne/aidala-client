@@ -42,7 +42,7 @@ function scrollTo(view) {
 
     <nav class="home-navigation">
       <ul class="home-navs">
-        <li class="home-nav home-nav__active" @click="scrollTo(refEra)">The AiDala era</li>
+        <li class="home-nav" @click="scrollTo(refEra)">The AiDala era</li>
         <li class="home-nav" @click="scrollTo(refBenefits)">Benefits</li>
         <li class="home-nav" @click="scrollTo(refCapabilities)">Capabilities</li>
         <li class="home-nav" @click="scrollTo(refFeatures)">Features</li>
