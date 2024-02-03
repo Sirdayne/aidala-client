@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Pagination, Navigation, Autoplay } from 'swiper/modules'
+import { Pagination, Navigation, Autoplay, Mousewheel } from 'swiper/modules'
 
 // Import Swiper styles
 import 'swiper/css';
@@ -10,15 +10,28 @@ import 'swiper/css/navigation';
 
 const modules = [Pagination, Navigation, Autoplay]
 
+const featuresModules = [Mousewheel, Pagination]
+
 import { ref } from 'vue'
 const refEra = ref<HTMLElement | null>(null)
 const refBenefits = ref<HTMLElement | null>(null)
+const refLine = ref<HTMLElement | null>(null)
 const refCapabilities = ref<HTMLElement | null>(null)
 const refFeatures = ref<HTMLElement | null>(null)
 const refJoin = ref<HTMLElement | null>(null)
 
 function scrollTo(view) {
   view.scrollIntoView({ behavior: 'smooth' })
+}
+
+function scrollToWithDelay(view) {
+  setTimeout(() => {
+    view.scrollIntoView({behavior: 'smooth'})
+  }, 1200)
+}
+
+function scrollOnVerticalSwipe() {
+  refFeatures.scrollIntoView()
 }
 </script>
 
@@ -56,24 +69,24 @@ function scrollTo(view) {
 
         <div class="home-benefits-main">
           <swiper
-              :autoplay="{
-                delay: 2500,
-                disableOnInteraction: false,
-              }"
-              :pagination="{
-                type: 'progressbar',
-                el: '.home-benefits-slider-progress',
-                horizontalClass: '.home-benefits-slider-progress',
-                progressbarFillClass: 'home-benefits-slider-progress-fill'
-              }"
-              :navigation="{
-                enabled: true,
-                nextEl: '.home-benefits-slider-next',
-                prevEl: '.home-benefits-slider-prev'
-              }"
-              :loop="true"
-              :modules="modules"
-              class="mySwiper"
+            :autoplay="{
+              delay: 2500,
+              disableOnInteraction: false,
+            }"
+            :pagination="{
+              type: 'progressbar',
+              el: '.home-benefits-slider-progress',
+              horizontalClass: '.home-benefits-slider-progress',
+              progressbarFillClass: 'home-benefits-slider-progress-fill'
+            }"
+            :navigation="{
+              enabled: true,
+              nextEl: '.home-benefits-slider-next',
+              prevEl: '.home-benefits-slider-prev'
+            }"
+            :loop="true"
+            :modules="modules"
+            class="mySwiper"
           >
             <swiper-slide>
               <div class="home-benefits-slider">
@@ -163,7 +176,7 @@ function scrollTo(view) {
               information and feature engineering, ensure an unparalleled depth of analysis that competitors struggle to match.
             </p>
           </div>
-          <div class="home-graph-main-line"></div>
+          <div ref="refLine" class="home-graph-main-line"></div>
           <div class="home-graph-img">
             <img src="../../assets/img/home-graph.png" alt="">
           </div>
@@ -175,29 +188,136 @@ function scrollTo(view) {
 
       <div class="home-features-gradient"></div>
 
-      <div class="home-features-container">
-        <div class="home-features-title-container">
-          <h2 class="home-features-title">
-            Features for Mining companies
-          </h2>
-        </div>
+      <div class="home-features-title-container">
+        <h2 class="home-features-title">
+          Features for Mining companies
+        </h2>
+      </div>
 
-        <div class="home-features-block">
-          <div class="home-features-block-text">
-            <div>
-              <h3 class="home-features-block-text-title">
-                Trading Platforms Integration: AiDala Meets MetaTrader, Charles Schwab, Interactive Brokers
-              </h3>
-              <p class="home-features-block-text-content">
-                Explore a seamless fusion of AIDALA with established trading platforms, bringing charting,
-                technical analysis (TA) tools, live market data, and direct trading capabilities into one unified space.
-              </p>
+      <div class="home-features-container">
+        <swiper
+          :direction="'vertical'"
+          :height="847"
+          :speed="600"
+          :slidesPerView="1"
+          :spaceBetween="30"
+          :mousewheel="true"
+          :modules="featuresModules"
+          @sliderMove="scrollOnVerticalSwipe()"
+          @reachEnd="scrollToWithDelay(refJoin)"
+          @reachBeginning="scrollToWithDelay(refLine)"
+          class="mySwiper"
+        >
+          <swiper-slide>
+            <div class="home-features-block">
+              <div class="home-features-block-text">
+                <div>
+                  <h3 class="home-features-block-text-title">
+                    Trading Platforms Integration: AiDala Meets MetaTrader, Charles Schwab, Interactive Brokers
+                  </h3>
+                  <p class="home-features-block-text-content">
+                    Explore a seamless fusion of AIDALA with established trading platforms, bringing charting,
+                    technical analysis (TA) tools, live market data, and direct trading capabilities into one unified space.
+                  </p>
+                </div>
+              </div>
+              <div class="home-features-block-img">
+                <img src="../../assets/img/home-features-1.png" alt="Features Image">
+              </div>
             </div>
-          </div>
-          <div class="home-features-block-img">
-            <img src="../../assets/img/home-features-1.png" alt="Features Image">
-          </div>
-        </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="home-features-block">
+              <div class="home-features-block-text">
+                <div>
+                  <h3 class="home-features-block-text-title">
+                    Algorithmic Trading Mastery: AiDala  Ranks with QuantConnect, AlgoTraders, TradeStation
+                  </h3>
+                  <p class="home-features-block-text-content">
+                    Automate your trading strategies with AiDala's algorithmic trading software, leveraging
+                    cutting-edge algorithms to execute trades based on technical analysis and market conditions.
+                  </p>
+                </div>
+              </div>
+              <div class="home-features-block-img">
+                <img src="../../assets/img/home-features-2.png" alt="Features Image">
+              </div>
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="home-features-block">
+              <div class="home-features-block-text">
+                <div>
+                  <h3 class="home-features-block-text-title">
+                    Backtesting Confidence: AiDala 
+                  </h3>
+                  <p class="home-features-block-text-content">
+                    Test your strategies against historical data with AiDala's backtesting software.
+                    Gain confidence in your approach before risking real money in the market.
+                  </p>
+                </div>
+              </div>
+              <div class="home-features-block-img">
+                <img src="../../assets/img/home-features-3.png" alt="Features Image">
+              </div>
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="home-features-block">
+              <div class="home-features-block-text">
+                <div>
+                  <h3 class="home-features-block-text-title">
+                    Charting Software Excellence: AiDala  Joins TradingView, StockCharts.com, NinjaTrader
+                  </h3>
+                  <p class="home-features-block-text-content">
+                    Benefit from advanced charting capabilities, technical indicators, and drawing tools.
+                    AiDala’s charting software stands alongside industry leaders to provide a comprehensive visual representation of market data.
+                  </p>
+                </div>
+              </div>
+              <div class="home-features-block-img">
+                <img src="../../assets/img/home-features-4.png" alt="Features Image">
+              </div>
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="home-features-block">
+              <div class="home-features-block-text">
+                <div>
+                  <h3 class="home-features-block-text-title">
+                    Technical Analysis 
+                  </h3>
+                  <p class="home-features-block-text-content">
+                    Dive into the world of technical analysis with AiDala's tools, featuring indicators like moving averages,
+                    RSI, MACD, and Bollinger Bands. Tailor your analysis to align with your trading style.
+                  </p>
+                </div>
+              </div>
+              <div class="home-features-block-img">
+                <img src="../../assets/img/home-features-5.png" alt="Features Image">
+              </div>
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="home-features-block">
+              <div class="home-features-block-text">
+                <div>
+                  <h3 class="home-features-block-text-title">
+                    Market Scanners and Screeners: AiDala alongside Trade Ideas
+                  </h3>
+                  <p class="home-features-block-text-content">
+                    Effortlessly filter stocks and instruments based on specific criteria with AiDala's
+                    market scanners and screeners, adding an extra layer of precision to your trading decisions.
+                  </p>
+                </div>
+              </div>
+              <div class="home-features-block-img">
+                <img src="../../assets/img/home-features-6.png" alt="Features Image">
+              </div>
+            </div>
+          </swiper-slide>
+        </swiper>
+
       </div>
     </div>
 
