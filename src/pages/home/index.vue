@@ -9,6 +9,18 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 const modules = [Pagination, Navigation, Autoplay]
+
+import { Ref, ref } from 'vue'
+const refEra = ref<HTMLElement | null>(null)
+const refBenefits = ref<HTMLElement | null>(null)
+const refCapabilities = ref<HTMLElement | null>(null)
+const refFeatures = ref<HTMLElement | null>(null)
+const refJoin = ref<HTMLElement | null>(null)
+
+function scrollTo(view) {
+  console.log(view, view.value, ' VIEW')
+  view.scrollIntoView({ behavior: 'smooth' })
+}
 </script>
 
 <template>
@@ -17,7 +29,7 @@ const modules = [Pagination, Navigation, Autoplay]
       <div class="home-gradient__block"></div>
     </div>
 
-    <div class="home-logo">
+    <div ref="refEra" class="home-logo">
       <img src="../../assets/img/logo_aidala.svg" alt="AiDala Logo">
     </div>
     <h1 class="home-title">Welcome to <span class="home-title__name">AiDala</span></h1>
@@ -31,15 +43,15 @@ const modules = [Pagination, Navigation, Autoplay]
 
     <nav class="home-navigation">
       <ul class="home-navs">
-        <li class="home-nav home-nav__active">The AiDala era</li>
-        <li class="home-nav">Benefits</li>
-        <li class="home-nav">Capabilities</li>
-        <li class="home-nav">Features</li>
-        <li class="home-nav">Join AiDala</li>
+        <li class="home-nav home-nav__active" @click="scrollTo(refEra)">The AiDala era</li>
+        <li class="home-nav" @click="scrollTo(refBenefits)">Benefits</li>
+        <li class="home-nav" @click="scrollTo(refCapabilities)">Capabilities</li>
+        <li class="home-nav" @click="scrollTo(refFeatures)">Features</li>
+        <li class="home-nav" @click="scrollTo(refJoin)">Join AiDala</li>
       </ul>
     </nav>
 
-    <div class="home-benefits">
+    <div class="home-benefits" ref="refBenefits">
       <h2 class="home-benefits-title">Our key benefits</h2>
       <div class="home-benefits-slider-container">
 
@@ -129,7 +141,7 @@ const modules = [Pagination, Navigation, Autoplay]
       </div>
     </div>
 
-    <div class="home-graph">
+    <div class="home-graph" ref="refCapabilities">
       <div class="home-graph-title-container">
         <h2 class="home-graph-title">
           Welcome to <span class="home-graph-title__name">AiDala</span>, where innovation meets personalized excellence in the world of crypto trading.
@@ -160,7 +172,7 @@ const modules = [Pagination, Navigation, Autoplay]
       </div>
     </div>
 
-    <div class="home-features">
+    <div class="home-features" ref="refFeatures">
       <div class="home-features-container">
         <div class="home-features-title-container">
           <h2 class="home-features-title">
@@ -187,7 +199,7 @@ const modules = [Pagination, Navigation, Autoplay]
       </div>
     </div>
 
-    <div class="home-join">
+    <div class="home-join" ref="refJoin">
       <div class="home-join-title-container">
         <h2 class="home-join-title">
           Join AiDala Today: Where Innovation Meets Your Trading Needs
