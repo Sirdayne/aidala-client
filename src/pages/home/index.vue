@@ -102,6 +102,7 @@ function scrollOnVerticalSwipe() {
                 </div>
                 <div class="home-benefits-img">
                   <img src="../../assets/img/benefits-slide-1.png" alt="Benefits Image">
+                  <div class="home-benefits-slider-gradient__mobile"></div>
                 </div>
                 <div class="home-benefits-slider-gradient"></div>
               </div>
@@ -118,6 +119,7 @@ function scrollOnVerticalSwipe() {
                 </div>
                 <div class="home-benefits-img">
                   <img src="../../assets/img/benefits-slide-2.png" alt="Benefits Image">
+                  <div class="home-benefits-slider-gradient__mobile"></div>
                 </div>
                 <div class="home-benefits-slider-gradient"></div>
               </div>
@@ -134,6 +136,7 @@ function scrollOnVerticalSwipe() {
                 </div>
                 <div class="home-benefits-img">
                   <img src="../../assets/img/benefits-slide-3.png" alt="Benefits Image">
+                  <div class="home-benefits-slider-gradient__mobile"></div>
                 </div>
                 <div class="home-benefits-slider-gradient"></div>
               </div>
@@ -377,7 +380,7 @@ function scrollOnVerticalSwipe() {
           AiDala.uk
         </div>
         <div class="home-footer-linkedin">
-          <img src="../../assets/img/linkedin_square.svg" alt="Features Image">
+          <img src="../../assets/img/linkedin_square.svg" alt="Linkedin Image">
         </div>
       </div>
     </footer>
