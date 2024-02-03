@@ -10,7 +10,7 @@ import 'swiper/css/navigation';
 
 const modules = [Pagination, Navigation, Autoplay]
 
-import { Ref, ref } from 'vue'
+import { ref } from 'vue'
 const refEra = ref<HTMLElement | null>(null)
 const refBenefits = ref<HTMLElement | null>(null)
 const refCapabilities = ref<HTMLElement | null>(null)
@@ -18,7 +18,6 @@ const refFeatures = ref<HTMLElement | null>(null)
 const refJoin = ref<HTMLElement | null>(null)
 
 function scrollTo(view) {
-  console.log(view, view.value, ' VIEW')
   view.scrollIntoView({ behavior: 'smooth' })
 }
 </script>
@@ -173,6 +172,9 @@ function scrollTo(view) {
     </div>
 
     <div class="home-features" ref="refFeatures">
+
+      <div class="home-features-gradient"></div>
+
       <div class="home-features-container">
         <div class="home-features-title-container">
           <h2 class="home-features-title">
@@ -200,6 +202,10 @@ function scrollTo(view) {
     </div>
 
     <div class="home-join" ref="refJoin">
+
+      <div class="home-join-gradient"></div>
+      <div class="home-join-gradient-2"></div>
+
       <div class="home-join-title-container">
         <h2 class="home-join-title">
           Join AiDala Today: Where Innovation Meets Your Trading Needs

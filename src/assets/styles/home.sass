@@ -68,7 +68,7 @@
     width: 100%
     bottom: 20px
     left: 0
-    z-index: 3
+    z-index: 4
 
   &-navs
     display: flex
@@ -342,10 +342,24 @@
     display: flex
     justify-content: center
     margin-top: 238px
+    position: relative
+
+    &-gradient
+      position: absolute
+      top: 300px
+      left: -700px
+      width: 500px
+      height: 500px
+      transform: rotate(-50.18deg)
+      transform-origin: 0 0
+      box-shadow: 350px 350px 350px 1px #1A2C5F
+      opacity: 0.6
+      z-index: 1
 
     &-container
       max-width: 1200px
       width: 100%
+      z-index: 2
 
     &-title
       text-align: center
@@ -389,6 +403,32 @@
 
   &-join
     margin-top: 360px
+    position: relative
+
+    &-gradient
+      position: absolute
+      top: -10px
+      left: calc(50% - 120px)
+      width: 1px
+      height: 1px
+      border-radius: 50%
+      transform-origin: 0 0
+      box-shadow: 150px 150px 150px 300px #1A2C5F
+      opacity: 0.6
+      z-index: 1
+
+    &-gradient-2
+      position: absolute
+      top: -270px
+      right: 330px
+      width: 1px
+      height: 1px
+      transform: rotate(53.18deg)
+      border-radius: 50%
+      transform-origin: 0 0
+      box-shadow: 250px 250px 250px 250px #1A2C5F
+      opacity: 0.6
+      z-index: 1
 
     &-title
       color: #fff
@@ -398,10 +438,12 @@
       max-width: 1100px
       width: 100%
       text-align: center
+      z-index: 2
 
       &-container
         display: flex
         justify-content: center
+        z-index: 2
 
     &-description
       margin-top: 16px
@@ -413,10 +455,12 @@
       text-align: center
       width: 700px
       max-width: 100%
+      z-index: 2
 
       &-container
         display: flex
         justify-content: center
+        z-index: 2
 
     &-btns
       margin-top: 40px
@@ -424,10 +468,12 @@
       max-width: 400px
       display: flex
       justify-content: space-between
+      z-index: 2
 
       &-container
         display: flex
         justify-content: center
+        z-index: 2
 
   &-btn
     border: 3px rgba(10, 96, 255, 1) solid
