@@ -21,18 +21,18 @@ const refFeatures = ref<HTMLElement | null>(null)
 const refJoin = ref<HTMLElement | null>(null)
 const refSlides = ref<HTMLElement | null>(null)
 
-function scrollTo(view) {
+function scrollTo(view: any) {
   view.scrollIntoView({ behavior: 'smooth' })
 }
 
-function scrollToWithDelay(view) {
+function scrollToWithDelay(view: any) {
   setTimeout(() => {
     view.scrollIntoView({behavior: 'smooth'})
   }, 1200)
 }
 
 function scrollOnVerticalSwipe() {
-  refSlides.value.scrollIntoView({behavior: 'smooth'})
+  refSlides?.value?.scrollIntoView({behavior: 'smooth'})
 }
 </script>
 
