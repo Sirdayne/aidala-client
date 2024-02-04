@@ -169,20 +169,26 @@ function scrollOnVerticalSwipe() {
             <div class="home-graph-main-high-title"><span class="home-graph-main-high-title_gradient">AiDala</span></div>
             <div class="home-graph-main-high-value"><span class="home-graph-main-high-value_gradient">90.0%</span></div>
           </div>
+
+          <div ref="refLine" class="home-graph-main-line"></div>
+          <div class="home-graph-img">
+            <img src="../../assets/img/home-graph.png" alt="">
+          </div>
+          <div class="home-graph-img_mobile">
+            <img src="../../assets/img/home-graph_mobile.png" alt="">
+          </div>
+
           <div class="home-graph-main-left">
             <div class="home-graph-main-left-value">86.4%</div>
             <div class="home-graph-main-left-description">5-shot* (reported) Previous SOTA (GPT-4)</div>
             <div class="home-graph-main-left-hint">*Note that evaluations of previous SOTA models use different prompting techniques.</div>
           </div>
+
           <div class="home-graph-main-right">
             <p>
               Benefit from superior data quality and relevance. AIDALA's advanced data pre-processing pipelines, incorporating contextual
               information and feature engineering, ensure an unparalleled depth of analysis that competitors struggle to match.
             </p>
-          </div>
-          <div ref="refLine" class="home-graph-main-line"></div>
-          <div class="home-graph-img">
-            <img src="../../assets/img/home-graph.png" alt="">
           </div>
         </div>
       </div>
@@ -322,6 +328,105 @@ function scrollOnVerticalSwipe() {
           </swiper-slide>
         </swiper>
 
+      </div>
+
+      <div class="home-features-container__mobile">
+        <div class="home-features-block">
+          <div class="home-features-block-text">
+            <div>
+              <h3 class="home-features-block-text-title">
+                Trading Platforms Integration: AiDala Meets MetaTrader, Charles Schwab, Interactive Brokers
+              </h3>
+              <p class="home-features-block-text-content">
+                Explore a seamless fusion of AIDALA with established trading platforms, bringing charting,
+                technical analysis (TA) tools, live market data, and direct trading capabilities into one unified space.
+              </p>
+            </div>
+          </div>
+          <div class="home-features-block-img">
+            <img src="../../assets/img/home-features-1.png" alt="Features Image">
+          </div>
+        </div>
+        <div class="home-features-block">
+          <div class="home-features-block-text">
+            <div>
+              <h3 class="home-features-block-text-title">
+                Algorithmic Trading Mastery: AiDala  Ranks with QuantConnect, AlgoTraders, TradeStation
+              </h3>
+              <p class="home-features-block-text-content">
+                Automate your trading strategies with AiDala's algorithmic trading software, leveraging
+                cutting-edge algorithms to execute trades based on technical analysis and market conditions.
+              </p>
+            </div>
+          </div>
+          <div class="home-features-block-img">
+            <img src="../../assets/img/home-features-2.png" alt="Features Image">
+          </div>
+        </div>
+        <div class="home-features-block">
+          <div class="home-features-block-text">
+            <div>
+              <h3 class="home-features-block-text-title">
+                Backtesting Confidence: AiDala 
+              </h3>
+              <p class="home-features-block-text-content">
+                Test your strategies against historical data with AiDala's backtesting software.
+                Gain confidence in your approach before risking real money in the market.
+              </p>
+            </div>
+          </div>
+          <div class="home-features-block-img">
+            <img src="../../assets/img/home-features-3.png" alt="Features Image">
+          </div>
+        </div>
+        <div class="home-features-block">
+          <div class="home-features-block-text">
+            <div>
+              <h3 class="home-features-block-text-title">
+                Charting Software Excellence: AiDala  Joins TradingView, StockCharts.com, NinjaTrader
+              </h3>
+              <p class="home-features-block-text-content">
+                Benefit from advanced charting capabilities, technical indicators, and drawing tools.
+                AiDala’s charting software stands alongside industry leaders to provide a comprehensive visual representation of market data.
+              </p>
+            </div>
+          </div>
+          <div class="home-features-block-img">
+            <img src="../../assets/img/home-features-4.png" alt="Features Image">
+          </div>
+        </div>
+        <div class="home-features-block">
+          <div class="home-features-block-text">
+            <div>
+              <h3 class="home-features-block-text-title">
+                Technical Analysis 
+              </h3>
+              <p class="home-features-block-text-content">
+                Dive into the world of technical analysis with AiDala's tools, featuring indicators like moving averages,
+                RSI, MACD, and Bollinger Bands. Tailor your analysis to align with your trading style.
+              </p>
+            </div>
+          </div>
+          <div class="home-features-block-img">
+            <img src="../../assets/img/home-features-5.png" alt="Features Image">
+          </div>
+        </div>
+        <div class="home-features-block">
+          <div class="home-features-block-text">
+            <div>
+              <h3 class="home-features-block-text-title">
+                Market Scanners and Screeners: AiDala alongside Trade Ideas
+              </h3>
+              <p class="home-features-block-text-content">
+                Effortlessly filter stocks and instruments based on specific criteria with AiDala's
+                market scanners and screeners, adding an extra layer of precision to your trading decisions.
+              </p>
+            </div>
+          </div>
+          <div class="home-features-block-img">
+            <img src="../../assets/img/home-features-6.png" alt="Features Image">
+          </div>
+        </div>
       </div>
     </div>
 
