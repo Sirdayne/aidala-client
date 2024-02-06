@@ -1,18 +1,16 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+import Sticky from 'sticky-js'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Pagination, Navigation, Autoplay, Mousewheel } from 'swiper/modules'
-
-// Import Swiper styles
 import 'swiper/css';
-
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-const modules = [Pagination, Navigation, Autoplay]
 
+const modules = [Pagination, Navigation, Autoplay]
 const featuresModules = [Mousewheel, Pagination]
 
-import { ref } from 'vue'
 const refEra = ref<HTMLElement | null>(null)
 const refBenefits = ref<HTMLElement | null>(null)
 const refLine = ref<HTMLElement | null>(null)
@@ -20,6 +18,8 @@ const refCapabilities = ref<HTMLElement | null>(null)
 const refFeatures = ref<HTMLElement | null>(null)
 const refJoin = ref<HTMLElement | null>(null)
 const refSlides = ref<HTMLElement | null>(null)
+
+const burgerActive = ref<boolean>(false)
 
 function scrollTo(view: any) {
   view.scrollIntoView({ behavior: 'smooth' })
@@ -34,10 +34,33 @@ function scrollToWithDelay(view: any) {
 function scrollOnVerticalSwipe() {
   refSlides?.value?.scrollIntoView({behavior: 'smooth'})
 }
+
+new Sticky('.home-navigation');
 </script>
 
 <template>
   <div class="home">
+
+    <div class="home-nav-burger-container">
+      <div class="home-nav-burger" :class="{ 'home-nav-burger_active': burgerActive }" @click="burgerActive = !burgerActive">
+        <span class="home-nav-burger-line-1"></span>
+        <span class="home-nav-burger-line-2"></span>
+        <span class="home-nav-burger-line-3"></span>
+      </div>
+    </div>
+
+
+    <Transition>
+      <ul v-if="burgerActive" class="home-navigation_mobile">
+        <li class="home-nav-mobile" @click="scrollTo(refEra)">The AiDala era</li>
+        <li class="home-nav-mobile" @click="scrollTo(refBenefits)">Benefits</li>
+        <li class="home-nav-mobile" @click="scrollTo(refCapabilities)">Capabilities</li>
+        <li class="home-nav-mobile" @click="scrollTo(refFeatures)">Features</li>
+        <li class="home-nav-mobile" @click="scrollTo(refJoin)">Join AiDala</li>
+      </ul>
+    </Transition>
+
+
     <div class="home-gradient">
       <div class="home-gradient__block"></div>
     </div>
@@ -54,7 +77,7 @@ function scrollOnVerticalSwipe() {
       </h2>
     </div>
 
-    <nav class="home-navigation">
+    <nav class="home-navigation" data-margin-top="20">
       <ul class="home-navs">
         <li class="home-nav" @click="scrollTo(refEra)">The AiDala era</li>
         <li class="home-nav" @click="scrollTo(refBenefits)">Benefits</li>
